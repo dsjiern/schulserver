@@ -37,7 +37,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Traefik
 Traefik bietet die Funktion eines Reverse-Proxy um mehrere Docker-Dienste auf einem Server anzubieten. Hierbei werden die nötigen SSL-Zertifikate automatisch per Let's Encrypt eingerichtet.
 
-# Prometheus + Grafana
+# Grafana
+Grafana bietet Dashboards zur Überwachung von Systemen und Datenauswertungen an und kann automatisiert auch Warnungen per E-Mail verschicken. Hierbei können verschiedene Datenquellen verwendet werden.
 
 # LDAP
 
