@@ -64,6 +64,8 @@ Grafana bietet Dashboards zur Überwachung von Systemen und Datenauswertungen an
 
 # YOURLS
 
+# OpenSlides
+
 # Zammad
 
 # Planka
