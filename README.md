@@ -1,6 +1,8 @@
 # schulserver
 Verschiedene Dienste als Docker-Container um selbst einen Server für den Schuleinsatz zu betreiben
 
+**Anmerkung:** Die auf dieser Übersicht aufgelisteten Dienste/Docker sollen in naher Zukunft noch beschrieben werden. Weiteren Ideen und Anmerkungen bitte gerne melden.
+
 # Vorbemerkungen
 Das GIT-Repository soll ein paar vorbereitete Docker-Container anbieten, womit man selbst schnell verschiedene Dienste für die Schule betreiben kann. An unserer Schule haben wir hierzu einen externen Server bei Hetzner angemietet. Je nach Bedarf und verfügbarer Internetleitung kann hier natürlich auch ein Server in der Schule dafür herhalten.
 
@@ -45,6 +47,7 @@ Grafana bietet Dashboards zur Überwachung von Systemen und Datenauswertungen an
 # Mailcow
 
 # Moodle
+Moodle ist ein kostenloses open-source Lernmanagement-System, das an vielen Schulen und Hochschulen weltweit eingesetzt wird.
 
 # Nextcloud
 Nextcloud ist eine kostenlose Alternative zu kommerziellem Cloud-Speicherplatz wie iCloud, OneDrive,...

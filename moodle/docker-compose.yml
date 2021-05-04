@@ -1,0 +1,47 @@
+---
+version: '3'
+services:
+  mdl_moodle:
+    image: moodlehq/moodle-php-apache:7.4
+    container_name: mdl_moodle
+    restart: unless-stopped
+    volumes:
+      - ./moodle/html:/var/www/html
+      - ./moodle/data:/var/www/moodledata
+      - ./moodle/conf/php.ini:/usr/local/etc/php/conf.d/90_php.ini:ro
+      - ./moodle/conf/ldap.conf:/etc/ldap/ldap.conf:ro
+    depends_on:
+      - mdl_mariadb
+    networks:
+      - default
+#      - proxy
+    ports:
+      - 80:80
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.moodle.entrypoints=http"
+      - "traefik.http.routers.moodle.rule=Host(`moodle.example.com`)"             # HIER DOMAIN EINGEBEN
+      - "traefik.http.middlewares.moodle-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.moodle.middlewares=moodle-https-redirect"
+      - "traefik.http.routers.moodle-secure.entrypoints=https"
+      - "traefik.http.routers.moodle-secure.rule=Host(`moodle.example.com`)"      # HIER DOMAIN EINGEBEN
+      - "traefik.http.routers.moodle-secure.tls=true"
+      - "traefik.http.routers.moodle-secure.tls.certresolver=http"
+      - "traefik.http.routers.moodle-secure.service=moodle"
+      - "traefik.http.services.moodle.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.moodle-secure.middlewares=secHeaders@file"
+      - "traefik.http.middlewares.moodle-secure.headers.customResponseHeaders.Access-Control-Allow-Origin=*"
+  mdl_mariadb:
+    image: mariadb:latest
+    container_name: mdl_mariadb
+    restart: unless-stopped
+    volumes:
+      - ./db/conf:/etc/mysql/conf.d
+      - ./db/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=MySQL-rootpwd            # ggf. Passwort anpassen
+
+#networks:
+#  proxy:
+#    external: true

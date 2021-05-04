@@ -1,0 +1,13 @@
+[server]
+
+[mysqld]
+character-set-server=utf8mb4
+character_set_client=utf8mb4
+collation-server=utf8mb4_general_ci
+innodb_buffer_pool_size = 18G
+innodb_flush_log_at_trx_commit = 2
+innodb_flush_method = O_DIRECT
+
+query_cache_type = 1
+query_cache_size = 36M
+query_cache_min_res_unit = 2K

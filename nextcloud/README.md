@@ -7,7 +7,7 @@ Nextcloud ist eine kostenlose Alternative zu kommerziellem Cloud-Speicherplatz w
 Die Nextcloud soll unter `nextcloud.example.com` erreichbar sein.
 
 ## Installation
-1. Kopiere den `grafana`-Ordner nach `/app/nextcloud`
+1. Kopiere den `nextcloud`-Ordner nach `/app/nextcloud`
 2. Passe die `docker-compose.yml` an
    1. Passe die Domains an:
    ```
