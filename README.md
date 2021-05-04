@@ -68,6 +68,7 @@ Collabora ist das Schwesterprodukt von LibreOffice. Dieses kann dabei auf einem 
 OnlyOffice ist wie CollaboraOffice ein kostenloses Office-Paket, das auch online genutzt und in anderen Systemen (z.B. Nextcloud oder Moodle) eingebunden werden kann. Dieses ist noch verhältnismäßig jung und hat aber eine äußerst gute MS-Office-Dateiunterstützung. Der größte Nachteil daran ist meiner Meinung nach aktuell noch, dass Präsentationen noch keine Animationen unterstützen. Optisch ist OnlyOffice allerdings sehr an das MS-Office angelehnt.
 
 # Cryptpad
+https://cryptpad.fr bietet verschiedene Online-Tools zur Zusammenarbeit. Hierbei werden sämtliche Dateien Ende-zu-Ende verschlüsselt gespeichert, so dass kein Fremder auf die Daten Zugriff hat, nichtmal der Serverbetreiber. Das Ganze ist auch open-source und kann somit auch auf einem eigenen Server installiert werden.
 
 # LimeSurvey
 

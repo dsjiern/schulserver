@@ -1,0 +1,49 @@
+---
+version: '3.8'
+
+services:
+  cryptpad:
+    image: "promasu/cryptpad:nginx"
+    hostname: cryptpad
+
+    restart: unless-stopped
+
+    environment:
+      - CPAD_MAIN_DOMAIN=cryptpad.example.com                 # HIER DOMAIN EINGEBEN
+      - CPAD_SANDBOX_DOMAIN=sandbox.example.com               # HIER DOMAIN EINGEBEN
+      - CPAD_HTTP2_DISABLE=true
+
+    volumes:
+      - ./data/blob:/cryptpad/blob
+      - ./data/block:/cryptpad/block
+      - ./data/customize:/cryptpad/customize
+      - ./data/data:/cryptpad/data
+      - ./data/files:/cryptpad/datastore
+      - ./data/config.js:/cryptpad/config/config.js
+
+    networks:
+      - proxy
+
+    ulimits:
+      nofile:
+        soft: 1000000
+        hard: 1000000
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.services.cpad.loadbalancer.server.port=80
+      - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+      - traefik.http.middlewares.https-redirect.redirectscheme.port=443
+      - traefik.http.routers.cpad-http.entrypoints=http
+      - traefik.http.routers.cpad-http.rule=Host(`cryptpad.example.com`, `sandbox.example.com`)    # HIER DOMAINS EINGEBEN
+      - traefik.http.routers.cpad-http.middlewares=https-redirect
+      - traefik.http.routers.cpad-https.entrypoints=https
+      - traefik.http.routers.cpad-https.rule=Host(`cryptpad.example.com`, `sandbox.example.com`)   # HIER DOMAINS EINGEBEN
+      - traefik.http.routers.cpad-https.tls=true
+      - traefik.http.routers.cpad-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.cpad-https.service=cpad
+
+networks:
+  proxy:
+    external: true
