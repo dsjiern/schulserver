@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  onlyoffice:
+    image: onlyoffice/documentserver-ee
+    container_name: onlyoffice
+    restart: unless-stopped
+    volumes:
+      - ./data:/var/www/onlyoffice/Data
+    networks:
+      - proxy
+    environment:
+      - "JWT_ENABLED=true"
+      - "JWT_SECRET=ganzgeheimesSECRET"         # HIER SECRET EINGEBEN
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.onlyoffice.entrypoints=http"
+      - "traefik.http.routers.onlyoffice.rule=Host(`onlyoffice.example.com`)"         # HIER DOMAIN EINGEBEN
+      - "traefik.http.middlewares.onlyoffice-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.onlyoffice.middlewares=onlyoffice-https-redirect"
+      - "traefik.http.routers.onlyoffice-secure.entrypoints=https"
+      - "traefik.http.routers.onlyoffice-secure.rule=Host(`onlyoffice.example.com`)"  # HIER DOMAIN EINGEBEN
+      - "traefik.http.routers.onlyoffice-secure.tls=true"
+      - "traefik.http.routers.onlyoffice-secure.tls.certresolver=http"
+      - "traefik.http.routers.onlyoffice-secure.service=onlyoffice"
+      - "traefik.http.services.onlyoffice.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.onlyoffice-secure.middlewares=onlyoffice-headers,secHeaders@file"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.customFrameOptionsValue=ALLOWALL"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.referrerPolicy=no-referrer"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.stsSeconds=31536000"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.stsPreload=true"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.stsIncludeSubdomains=true"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.browserXssFilter=true"
+      - "traefik.http.middlewares.onlyoffice-headers.headers.customRequestHeaders.X-Forwarded-Proto=https"
+
+networks:
+  proxy:
+    external: true

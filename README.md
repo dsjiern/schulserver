@@ -65,6 +65,7 @@ BigBlueButton ist ein kostenloses Web-Videokonferenzsystem, das optimale Funktio
 Collabora ist das Schwesterprodukt von LibreOffice. Dieses kann dabei auf einem Server installiert und online genutzt werden, indem man die Funktion in verschiedene andere Systeme (z.B. Nextcloud oder Moodle) einbindet.
 
 # OnlyOffice
+OnlyOffice ist wie CollaboraOffice ein kostenloses Office-Paket, das auch online genutzt und in anderen Systemen (z.B. Nextcloud oder Moodle) eingebunden werden kann. Dieses ist noch verhältnismäßig jung und hat aber eine äußerst gute MS-Office-Dateiunterstützung. Der größte Nachteil daran ist meiner Meinung nach aktuell noch, dass Präsentationen noch keine Animationen unterstützen. Optisch ist OnlyOffice allerdings sehr an das MS-Office angelehnt.
 
 # Cryptpad
 
