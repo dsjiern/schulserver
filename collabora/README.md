@@ -15,8 +15,8 @@ Das Office soll unter `collabora.example.com` erreichbar sein.
       **Hinweis:** hier müssen alle Domains mit | getennt angegeben werden, von wo aus überall auf das Collabora-Office zugegriffen werden kann. Das dient als Zugriffsschutz, dass keine Fremden Seiten den Server misbrauchen.
    2. Passe die Domains an:
    ```
-   - "traefik.http.routers.nextcloud-app.rule=Host(`collabora.example.com`)"           # HIER DOMAIN EINGEBEN
-   - "traefik.http.routers.nextcloud-app-secure.rule=Host(`collabora.example.com`)"    # HIER DOMAIN EINGEBEN
+   - "traefik.http.routers.collabora.rule=Host(`collabora.example.com`)"              # HIER DOMAIN EINGEBEN
+   - "traefik.http.routers.collabora-secure.rule=Host(`collabora.example.com`)"       # HIER DOMAIN EINGEBEN
    ```
 
 ## Starten
