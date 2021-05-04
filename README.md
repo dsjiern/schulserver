@@ -47,6 +47,7 @@ Grafana bietet Dashboards zur Überwachung von Systemen und Datenauswertungen an
 # Moodle
 
 # Nextcloud
+Nextcloud ist eine kostenlose Alternative zu kommerziellem Cloud-Speicherplatz wie iCloud, OneDrive,...
 
 # BigBlueButton
 
