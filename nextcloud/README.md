@@ -27,7 +27,7 @@ Die Nextcloud soll unter `nextcloud.example.com` erreichbar sein.
 ## Starten
 Im Ordner `/app/nextcloud` den Befehl `docker-compose up -d` aufrufen
 
-Hinweis: beim ersten Start werden die Nextcloud-Daten erst automatisch nach `/app/nextcloud/app` heruntergeladen (ca. 600MB). Deswegen kann es hierbei einige Zeit dauern, bis das Frontend erreichbar ist!
+**Hinweis:** beim ersten Start werden die Nextcloud-Daten erst automatisch nach `/app/nextcloud/app` heruntergeladen (ca. 600MB). Deswegen kann es hierbei einige Zeit dauern, bis das Frontend erreichbar ist!
 
 ## Testen
 Nachdem die nötigen Daten heruntergeladen wurden kann das Frontend über `https://nextcloud.example.com` aufgerufen werden und man landet direkt auf der Installations-Oberfläche.

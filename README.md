@@ -55,6 +55,7 @@ Moodle ist ein kostenloses open-source Lernmanagement-System, das an vielen Schu
 Nextcloud ist eine kostenlose Alternative zu kommerziellem Cloud-Speicherplatz wie iCloud, OneDrive,...
 
 # BigBlueButton
+BigBlueButton ist ein kostenloses Web-Videokonferenzsystem, das optimale Funktionen für den Schuleinsatz bietet.
 
 # Jitsi
 
