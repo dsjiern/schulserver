@@ -61,7 +61,8 @@ BigBlueButton ist ein kostenloses Web-Videokonferenzsystem, das optimale Funktio
 
 # Gitea
 
-# CollaboraOffice
+# Collabora Office
+Collabora ist das Schwesterprodukt von LibreOffice. Dieses kann dabei auf einem Server installiert und online genutzt werden, indem man die Funktion in verschiedene andere Systeme (z.B. Nextcloud oder Moodle) einbindet.
 
 # OnlyOffice
 
