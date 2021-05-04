@@ -38,6 +38,11 @@ Das System soll unter `bbb.example.com` erreichbar sein.
    ```
    **Hinweis:** dieser Schritt muss auch nach jeder Änderung an den Einstellungen in der Datei `.env` passieren!
 7. Kopiere die `docker-compose.override.yml` nach `/app/bbb/`
+8. Domains in `docker-compose.override.yml` anpassen:
+   ```
+   - "traefik.http.routers.bbb.rule=Host(`bbb.example.com`)"                          # HIER DOMAIN EINTRAGEN
+   - "traefik.http.routers.bbb-secure.rule=Host(`bbb.example.com`)"                   # HIER DOMAIN EINTRAGEN
+   ```
 
 ## Starten
 Im Ordner `/app/bbb` den Befehl `docker-compose up -d` aufrufen.
