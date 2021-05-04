@@ -37,15 +37,17 @@ Das Moodle soll unter `moodle.example.com` erreichbar sein.
 
 **Anmerkung:** Standardmäßig ist die aktuelle Entwicklerversion (aktuell 4.0dev) aktiv. Es empfiehlt sich, auf die letzte stabile Version zu wechseln:
 1. Ins Verzeichnis wechseln: `cd /app/moodle/moodle/html`
-2. Versionen/Branches auflisten: `git branch -a`, die aktuellste Version (Stand 4.5.2021) ist v3.11: `remotes/origin/MOODLE_311_STABLE`
+2. Versionen/Branches auflisten: `git branch -a`, die aktuellste Version (Stand 4.5.2021) ist v3.10: `remotes/origin/MOODLE_310_STABLE` (**Anmerkung:** entgegen dem Namen ist die Version 3.11 aktuell noch in der vorläufigen Alpha-Version!)
 3. zu diesem Branch wechseln:
    ```
-   git branch --track MOODLE_311_STABLE origin/MOODLE_§11_STABLE
-   git checkout MOODLE_311_STABLE
+   git branch --track MOODLE_310_STABLE origin/MOODLE_310_STABLE
+   git checkout MOODLE_310_STABLE
    ```
 
 Mit dem 3. Schritt kann jederzeit auch auf eine **höhere** Version gewechselt werden. (Ein Downgrade ist so zwar auch möglich, wird aber nicht empfohlen!)
 Zukünftige Updates innerhalb derselben Versionsnummer führt man mit `git pull` aus.
+
+**Anmerkung:** Durch die Installation per GIT erhält man die Version 3.10.3+, die wöchentlich Sicherheits-Updates erhält. D.h. der Update-Befehl `git pull` kann prinzipiell einmal wöchentlich aufgerufen werden falls großen Wert auf Sicherheit gelegt wird.
 
 ## Starten
 Im Ordner `/app/moodle` den Befehl `docker-compose up -d` aufrufen
