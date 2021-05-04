@@ -3,6 +3,8 @@ Verschiedene Dienste als Docker-Container um selbst einen Server für den Schule
 
 **Anmerkung:** Die auf dieser Übersicht aufgelisteten Dienste/Docker sollen in naher Zukunft noch beschrieben werden. Weiteren Ideen und Anmerkungen bitte gerne melden.
 
+**Anmerkung 2:** Aktuell wird lediglich die Installation der Dienste beschrieben, es sollen weitere Informationen und Tipps für verschiedene Einstellungen folgen.
+
 # Vorbemerkungen
 Das GIT-Repository soll ein paar vorbereitete Docker-Container anbieten, womit man selbst schnell verschiedene Dienste für die Schule betreiben kann. An unserer Schule haben wir hierzu einen externen Server bei Hetzner angemietet. Je nach Bedarf und verfügbarer Internetleitung kann hier natürlich auch ein Server in der Schule dafür herhalten.
 
