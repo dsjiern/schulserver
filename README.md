@@ -60,6 +60,9 @@ BigBlueButton ist ein kostenloses Web-Videokonferenzsystem, das optimale Funktio
 # Jitsi
 
 # Gitea
+Mit Gitea kann auf einem eigenen Server ein GIT-System ähnlich https://www.github.com installiert werden. Der Vorteil für die Schule liegt klar auf der Hand: Da es auf einem eigenen Server betrieben wird, ist man nicht abhängig von amerikanischen Anbietern und ist somit datenschutzkonform.
+
+Gitea bitet dabei sowohl die Möglichkeit über `git`-Befehle als auch per Webfrontend zuzugreifen.
 
 # Collabora Office
 Collabora ist das Schwesterprodukt von LibreOffice. Dieses kann dabei auf einem Server installiert und online genutzt werden, indem man die Funktion in verschiedene andere Systeme (z.B. Nextcloud oder Moodle) einbindet.

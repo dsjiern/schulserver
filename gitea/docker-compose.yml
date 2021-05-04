@@ -1,0 +1,56 @@
+version: '2'
+
+services:
+  web:
+    image: gitea/gitea:1.12.4
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - DB_TYPE=mysql
+      - DB_HOST=db:3306
+      - DB_NAME=gitea
+      - DB_USER=gitea
+      - DB_PASSWD=MySQL-userpwd
+    networks:
+      - gitea
+#      - proxy
+    ports:
+      - 80:3000
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - db
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.gitea.entrypoints=http"
+      - "traefik.http.routers.gitea.rule=Host(`git.example.com`)"                  # HIER DOMAIN EINGEBEN
+      - "traefik.http.middlewares.gitea-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.gitea.middlewares=gitea-https-redirect"
+      - "traefik.http.routers.gitea-secure.entrypoints=https"
+      - "traefik.http.routers.gitea-secure.rule=Host(`git.example.com`)"           # HIER DOMAIN EINGEBEN
+      - "traefik.http.routers.gitea-secure.tls=true"
+      - "traefik.http.routers.gitea-secure.tls.certresolver=http"
+      - "traefik.http.routers.gitea-secure.service=gitea"
+      - "traefik.http.services.gitea.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+  db:
+    image: mariadb:10
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=MySQL-rootpwd
+      - MYSQL_DATABASE=gitea
+      - MYSQL_USER=gitea
+      - MYSQL_PASSWORD=MySQL-userpwd
+    networks:
+      - gitea
+    volumes:
+      - ./db/:/var/lib/mysql
+
+networks:
+  gitea:
+    external: false
+#  proxy:
+#    external: true
