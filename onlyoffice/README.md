@@ -24,6 +24,10 @@ Das Office soll unter `onlyoffice.example.com` erreichbar sein.
    - "traefik.http.routers.onlyoffice.rule=Host(`onlyoffice.example.com`)"         # HIER DOMAIN EINGEBEN
    - "traefik.http.routers.onlyoffice-secure.rule=Host(`onlyoffice.example.com`)"  # HIER DOMAIN EINGEBEN
    ```
+3. Erstelle Ordner
+   ```
+   mkdir /app/onlyoffice/data
+   ```
 
 ## Starten
 Im Ordner `/app/collabora` den Befehl `docker-compose up -d` aufrufen
