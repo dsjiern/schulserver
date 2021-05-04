@@ -45,3 +45,6 @@ Nachdem der Container gestartet wurde, kann die Seite `https://onlyoffice.exampl
 1. Als Administrator die App "ONLYOFFICE" aktivieren/installieren
 2. In den Einstellungen "ONLYOFFICE" auswählen
 3. Als "Serviceadresse" `https://onlyoffice.example.com` und als "Geheimen Schlüssel" das Secret von oben eingeben
+
+## Lizenzdatei
+Wer eine Lizenz von OnlyOffice gekauft hat, kann diese `license.lic` einfach im Ordner `/app/onlyoffice/data` abspeichern.
