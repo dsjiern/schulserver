@@ -84,3 +84,13 @@ https://cryptpad.fr bietet verschiedene Online-Tools zur Zusammenarbeit. Hierbei
 # Planka
 
 # ProFormA
+
+# TYPO3 für Homepage
+
+# Joomla für Homepage
+
+# WordPress für Homepage
+
+# pures PHP/MySQL für Homepage
+
+# open | Schulportfolio
