@@ -1,0 +1,42 @@
+version: '3.3'
+services:
+  collabora:
+    image: collabora/code
+    container_name: collabora_app
+    networks:
+      - proxy
+    cap_add:
+      - MKNOD
+    expose:
+      - 9980
+    environment:
+      - "domain=moodle.example.com|nextcloud.example.com"          # HIER DOMAINS EINGEBEN
+      - "extra_params=--o:ssl.enable=false --o:ssl.termination=true"
+    restart: unless-stopped
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.collabora.entrypoints=http"
+      - "traefik.http.routers.collabora.rule=Host(`collabora.example.com`)"              # HIER DOMAIN EINGEBEN
+      - "traefik.http.middlewares.collabora-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.collabora.middlewares=collabora-https-redirect"
+      - "traefik.http.routers.collabora-secure.entrypoints=https"
+      - "traefik.http.routers.collabora-secure.rule=Host(`collabora.example.com`)"       # HIER DOMAIN EINGEBEN
+      - "traefik.http.routers.collabora-secure.tls=true"
+      - "traefik.http.routers.collabora-secure.tls.certresolver=http"
+      - "traefik.http.routers.collabora-secure.service=collabora"
+      - "traefik.http.services.collabora.loadbalancer.server.port=9980"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.collabora-secure.middlewares=collabora-headers,secHeaders@file"
+      - "traefik.http.middlewares.collabora-headers.headers.customFrameOptionsValue=ALLOWALL"
+      - "traefik.http.middlewares.collabora-headers.headers.referrerPolicy=no-referrer"
+      - "traefik.http.middlewares.collabora-headers.headers.stsSeconds=31536000"
+      - "traefik.http.middlewares.collabora-headers.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.collabora-headers.headers.stsPreload=true"
+      - "traefik.http.middlewares.collabora-headers.headers.stsIncludeSubdomains=true"
+      - "traefik.http.middlewares.collabora-headers.headers.browserXssFilter=true"
+      - "traefik.http.middlewares.collabora-headers.headers.customRequestHeaders.X-Forwarded-Proto=https"
+
+networks:
+  proxy:
+    external: true
