@@ -75,6 +75,7 @@ OnlyOffice ist wie CollaboraOffice ein kostenloses Office-Paket, das auch online
 https://cryptpad.fr bietet verschiedene Online-Tools zur Zusammenarbeit. Hierbei werden sämtliche Dateien Ende-zu-Ende verschlüsselt gespeichert, so dass kein Fremder auf die Daten Zugriff hat, nichtmal der Serverbetreiber. Das Ganze ist auch open-source und kann somit auch auf einem eigenen Server installiert werden.
 
 # LimeSurvey
+LimeSurvey ist ein professionelles Umfrage-Tool, welches open-source angeboten wird. Fertig gehostet kann es unter https://www.limesurvey.org angemietet werden oder als Docker-Container auf einem eigenen Server installiert werden.
 
 # YOURLS
 
