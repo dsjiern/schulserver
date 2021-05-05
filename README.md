@@ -58,6 +58,7 @@ Nextcloud ist eine kostenlose Alternative zu kommerziellem Cloud-Speicherplatz w
 BigBlueButton ist ein kostenloses Web-Videokonferenzsystem, das optimale Funktionen für den Schuleinsatz bietet.
 
 # Jitsi
+Jitsi ist eine einfache Videokonferenz-Software.
 
 # Gitea
 Mit Gitea kann auf einem eigenen Server ein GIT-System ähnlich https://www.github.com installiert werden. Der Vorteil für die Schule liegt klar auf der Hand: Da es auf einem eigenen Server betrieben wird, ist man nicht abhängig von amerikanischen Anbietern und ist somit datenschutzkonform.
